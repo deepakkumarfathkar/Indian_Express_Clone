@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<style>
+    #header_s{
+        width: 100%;
+        margin: auto;
+        background-color:lightgray ;
+        text-align: center;
+       
+    }
+    #header_s a{
+
+        color: black;
+    }
+    .logo_s{
+        display: flex;
+        justify-content: space-around;
+        border: 1px solid red;
+        background-color: rgb(245, 245, 245);
+    }
+    .logo_s div{
+        border: 1px solid red;
+        align-items: center;
+        /* padding: 1%; */
+    }
+    .logo_app_s{
+        padding-top: 20px;
+       
+    }
+    .logo_app_s i{
+        background-color:black;
+        height: 48px;
+        color:white ;
+        border-radius: 50%;
+    }
+    .logo_site_s{
+        width: 90%;
+        text-align: center;
+    }
+    #advertisement_s{
+        width: 80%;
+        margin: auto;
+        height: 17rem;
+        border: 1px solid teal;
+    }
+
+    .box1_s{
+        border: 1px solid hotpink;
+    }
+
+    #container1_s{
+        width: 85%;
+        margin: auto;
+        border: 1px solid red;
+        display: flex;
+        justify-content: space-between;
+        
+
+    }
+    #inner_container1_s{
+
+        width:47%;
+
+    }
+    #inner_container1_s img{
+        width: 100%;
+    }
+    #inner_container2_s{
+        width: 48%;
+    }
+    #container2_s{
+        width: 85%;
+        margin: auto;
+        border: 1px solid red;
+        display: flex;
+        justify-content: space-between;
+        padding: 0% 1%;
+    }
+    #top_news{
+        width: 49%;
+        /* border: 1px solid teal; */
+    }
+    #latest_news{
+        width: 49%;
+        /* border: 1px solid gray; */
+        background-color: rgb(234, 234, 234);;
+    }
+    .top_news_inner{
+        display: flex;
+        justify-content: space-between;
+        height: 5rem;
+        /* margin-top: 5px; */
+        border: 1px dotted gray;
+
+    }
+    .top_news_inner p{
+        width: 70%;
+    }
+    .top_news_inner img{
+        width:24% ;
+        height: 75%;
+        margin: auto;
+    }
+    .latest_news_inner{
+        height: 5rem;
+        border: 1px dotted gray;
+    }
+
+    .premium_news_s{
+        width: 85%;
+        margin: auto;
+        border: 1px solid gray;
+        /* background-color: rgb(11,18,43); */
+        height: 17rem;
+    }
+
+    .swiper-slide{
+        width: 20%;
+        height: 80%;
+        border: 1px solid teal;
+        margin: auto;
+    }
+    #new_news_s{
+        width: 85%;
+        margin: auto;
+        margin-top: 1rem;
+    }
+
+#news_by_city_s{
+        width: 100%;
+        margin: auto;
+        margin-top: 2px;
+        border-top: 1px dotted gray;
+        display: flex;
+        justify-content: space-between;
+}
+#inner1_s{
+    width:47%;
+}
+#inner1_s img{
+    width: 100%;
+}
+#inner2_s{
+    width: 47%;
+}
+#label_s{
+    font-size: larger;
+    font-weight: 400;
+
+}
+</style>
+<body>
+    <div id="header_s">
+        <a href="">ENGLISH</a>
+        <a href="">தமிழ்</a>
+        <a href="">বাংলা</a>
+        <a href="">മലയാളം</a>
+        <a href="">हिन्दी</a>
+        <a href="">मराठी</a>
+    </div>
+    <div class="logo_s">
+            <div class="logo_app_s">
+                <a href="https://www.facebook.com/indianexpress"><i class="fa fa-facebook-f" style="font-size:36px"></i></a>
+                <a href="https://twitter.com/indianexpress"><i class="fa fa-twitter" style="font-size:36px"></i></a>
+            </div>
+            <div class="logo_site_s">
+            <a href="./home.html"> <img src="https://indianexpress.com/wp-content/themes/indianexpress/images/indian-express-logo-n.svg" alt=""></a>
+            <p id="time_s"></p>
+
+            </div>
+    </div>
+
+    <div>Navbar</div>
+    <div id="advertisement_s">advirtisement</div>
+    <hr>
+    <div id="">
+   <div class="box1_s">
+    <div id="container1_s">
+        <div id="inner_container1_s"></div>
+        <div id="inner_container2_s"></div>
+    </div>
+
+    <div id="container2_s">
+        <div id="top_news"><h3>TOP NEWS</h3></div>
+        <div id="latest_news"></div>
+    </div>
+
+   
+    <div class="swiper mySwiper premium_news_s">
+
+        <!-- <div class="swiper mySwiper"> -->
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 5</div>
+              <div class="swiper-slide">Slide 6</div>
+              <div class="swiper-slide">Slide 7</div>
+              <div class="swiper-slide">Slide 8</div>
+              <div class="swiper-slide">Slide 9</div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          <!-- </div> -->
+
+    </div>
+
+    <div id="new_news_s">
+        <div style="border-bottom: 1px dotted gray; padding-bottom: 5px;">
+            <label for="" id="label_s">Label</label>
+            <select id="city_s">
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Pune">Pune</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Banglore">Bangalore</option>
+            </select>
+        </div>
+        <div id="news_by_city_s">
+            <div id="inner1_s"></div>
+            <div id="inner2_s"></div>
+        </div>
+    </div>
+</div>
+<div class="box2_s">
+
+</div>
+</div>
+</body>
+</html>
+<script src="./scripts/index.js">
+  //40e1600621784c8b9353d3c3ad8cef6b
+  //2f9406a793e0494c999bc0adce06e9c2
+ 
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    slidesPerGroup: 3,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+  console.log(swiper)
+//   let getPremiumData =async()=>{
+//     let res = await fetch(`https://newsapi.org/v2/everything?q=india&from=2022-08-24&sortBy=popularity&apiKey=40e1600621784c8b9353d3c3ad8cef6b&pageSize=9`);
+//     let data = await res.json();
+//     appendPremiumData(data.articles);
+//     console.log("data", data);
+// }
+// getPremiumData();
+// let premium_news = document.getElementById("swiper-wrapper");
+// let appendPremiumData =(data)=>{
+//     premium_news.innerHTML = null;
+//     data.forEach(function(el){
+//         let div = document.createElement("div");
+//         div.setAttribute("class", "swiper-slide")
+//         let title = document.createElement("p");
+//         title.innerText = el.title;
+//         let img = document.createElement("img");
+//         img.src= el.urlToImage;
+//         div.append(title,img);
+//         // premium_news.append(div);
+
+//     })
+    
+// }
+  </script>
