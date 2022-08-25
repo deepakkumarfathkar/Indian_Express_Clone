@@ -7,7 +7,7 @@ var url = 'https://newsapi.org/v2/top-headlines?' +
 
 let  getData=async ()=>{
     try {
-         let res =await fetch(url+'&country=in')
+         let res =await fetch(`https://newsapi.org/v2/everything?q=indian political news&sortBy=relevancy&apiKey=80732b8fea5a4855a6728ee0eee12001`)
     let data =await res.json()
     let new_data=data.articles
     console.log(new_data)
@@ -21,11 +21,16 @@ let  getData=async ()=>{
 
 let appenddata=(data)=>{
     let content=document.getElementById('content_container_2')
-    data.forEach(({urlToImage,title})  => {
-        if(urlToImage!=undefined){
+    let no_new=0
+    data.forEach(({urlToImage,title,url})  => {
+        if(urlToImage!=undefined&&no_new<=25){
         let box1=document.createElement('div')
         box1.addEventListener('click',function(){
-
+            box1.addEventListener('click',function(){
+                window.open(url)
+               
+                        
+            })
         })
         let imag=document.createElement('img')
         imag.src=urlToImage
@@ -36,6 +41,7 @@ let appenddata=(data)=>{
         box1.append(imag,box)
         content.append(box1)
         }
+        no_new++
 
         
     });
@@ -57,11 +63,15 @@ getmustread()
 
 let appenddatamustread=(data)=>{
     let content=document.getElementById('MUST_READ')
-    data.forEach(({urlToImage,title})  => {
+    data.forEach(({urlToImage,title,url})  => {
         if(urlToImage!=undefined){
         let box1=document.createElement('div')
         box1.addEventListener('click',function(){
-            
+            box1.addEventListener('click',function(){
+                window.open(url)
+               
+                        
+            })
         })
         let imag=document.createElement('img')
         imag.src=urlToImage
@@ -79,7 +89,7 @@ let appenddatamustread=(data)=>{
 
 const getswapData=async ()=>{
    try {
-    let res =await fetch(url+'&sortBy=publishedAt')
+    let res =await fetch(`https://newsapi.org/v2/everything?q=indian political news&sortBy=publishedAt&apiKey=80732b8fea5a4855a6728ee0eee12001`)
     let data =await res.json()
     let new_data=data.articles
     getDataswap(new_data)
@@ -97,7 +107,11 @@ const getDataswap=(data)=>{
     container.innerHTML=""
     let box=document.createElement("div")
     box.addEventListener('click',function(){
-            
+        box.addEventListener('click',function(){
+            window.open(data[cout].url)
+           
+                    
+        })     
     })
     box.setAttribute("id","PULSE_NEWS_1")
     let box1=document.createElement("div")
@@ -139,11 +153,33 @@ const getDataswap=(data)=>{
    EXPRESS_div2.append(image6,title6)
 
  EXPRESS.append(EXPRESS_div1,EXPRESS_div2)
+
+ let below_contar=document.getElementById('qys')
+ let newscout=7
+ data.forEach(el => {
+    if(newscout<=7||newscout<10 ){
+      let box_contr=document.createElement("div")
+      box_contr.addEventListener('click',function(){
+        window.open(data[newscout].url)
+       
+                
+    })
+      let bimg=document.createElement("img")  
+      bimg.src= data[newscout].urlToImage
+      let btitl=document.createElement("h6")
+      btitl.innerText=data[newscout].title
+      box_contr.append(bimg,btitl)
+      below_contar.append(box_contr)
+      newscout++
+    }
+   
+    
+ });
 }
 //everything?q=apple&from=2022-08-22&to=2022-08-24&sortBy=popularity&apiKey=API_KEY
-let  getData_news=async ()=>{
+let  getData_news=async (page_number)=>{
    try {
-    let urm = 'https://newsapi.org/v2/everything?q=indian political news&from=2022-07-24&sortBy=publishedAt&apiKey=80732b8fea5a4855a6728ee0eee12001';
+    let urm = `https://newsapi.org/v2/everything?q=indian political news&sortBy=publishedAt&apiKey=80732b8fea5a4855a6728ee0eee12001&pageSize=20&page=${page_number}`;
     let res =await fetch(urm)
     let data =await res.json()
     let new_data=data.articles
@@ -155,13 +191,20 @@ let  getData_news=async ()=>{
     
 }
 
-getData_news()
+let j=1
+window.onload=getData_news(j)
 
 const appendallnews=(data)=>{
     let container=document.getElementById('news_container')
+    container.innerHTML=""
      data.forEach(el => {
         let box=document.createElement("div")
         box.setAttribute("class","news_container_inner")
+        box.addEventListener('click',function(){
+            window.open(el.url)
+           
+                    
+        })
         let boximg=document.createElement("div")
         let image=document.createElement("img")
         image.src=el.urlToImage
@@ -182,3 +225,19 @@ const appendallnews=(data)=>{
         
      });
 }
+
+const showButton=(result,per_page)=>{
+    
+    document.getElementById("news_buttoon").innerHTML=""
+    let buttons=Math.ceil(result/per_page)
+    for(let i=1;i<=buttons;i++){
+        let btn=document.createElement('button')
+        btn.innerHTML=i
+        btn.addEventListener("click",function(){
+             getData_news(i)
+        })
+        document.getElementById("news_buttoon").append(btn)
+    }
+}
+
+showButton(100,20)
