@@ -14,7 +14,7 @@ time.innerHTML = `${day}, ${month} ${date} ${year}`
 
 let getData = async()=>{
 
-    let res = await fetch(` https://newsapi.org/v2/top-headlines?country=in&apiKey=2f9406a793e0494c999bc0adce06e9c2&pageSize=6`);
+    let res = await fetch(` https://newsapi.org/v2/top-headlines?country=in&apiKey=40e1600621784c8b9353d3c3ad8cef6b&pageSize=6`);
     let data = await res.json();
     console.log("d",data.articles);
     appendData(data.articles);
@@ -62,7 +62,7 @@ let appendData =(data)=>{
 let container2 = document.getElementById("container2_s");
 
 let getTopNews =async ()=>{
-    let res = await fetch(`https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=2f9406a793e0494c999bc0adce06e9c2`);
+    let res = await fetch(`https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=40e1600621784c8b9353d3c3ad8cef6b`);
     let data = await res.json();
     // console.log(data);
     appendTopNews(data.articles);
@@ -93,7 +93,7 @@ let appendTopNews =(data)=>{
 let latest_news = document.getElementById("latest_news");
 
 let getLatestNews = async()=>{
-    let res = await fetch(`https://newsapi.org/v2/everything?q=Apple&from=2022-08-24&sortBy=popularity&apiKey=2f9406a793e0494c999bc0adce06e9c2&pageSize=10`);
+    let res = await fetch(`https://newsapi.org/v2/everything?q=Apple&from=2022-08-24&sortBy=popularity&apiKey=40e1600621784c8b9353d3c3ad8cef6b&pageSize=10`);
     let data = await res.json();
     // console.log(data.articles);
     appendLatestNews(data.articles);
