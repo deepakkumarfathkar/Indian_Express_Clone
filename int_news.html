@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles_d/int_news.css">
+    <!-- <link rel="shortcut icon" href="assets/tab.png" />
+    <link rel="stylesheet" href="./styles_d/style.css">
+    <link rel="stylesheet" href="./styles_d/navpop.css"> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div id="nav_d"> -->
+
+    <!-- import nav_bar  -->
+
+    <!-- </div> -->
+    <div id="quick_d">
+        <div><button id="countries_d">Countries:</button></div>
+        <div><button class="country_d">Australia</button>
+            <button class="country_d">Russia</button>
+            <button class="country_d">Ukraine</button>
+            <button class="country_d">Japan</button></div>  
+    </div>
+    <div id="main_container_d">
+        <p class="page_position"></p>
+        <div id="container_d_1">
+            <h4>INTERNATIONAL NEWS</h4>
+            <div id="int_container">
+                <div id="intr_news">
+                    <!--sliding window  -->
+                </div>
+                <div id="top_news_d">
+                    <!-- top news -->
+                </div>
+            </div>
+            <hr type="solid" color="black">
+            <div id="international_news">
+            <!-- International -->
+            </div>
+        </div>
+        <div id="main_container_dk">
+            <div id="main_container_dk_1">
+                <h4>BEST OF EXPRESS </h4>
+                <hr>
+                <!-- best news  -->
+            </div>
+            <div>
+                <div id="recomodation_d">
+                    <h4>TOP NEWS</h4>
+                    <hr>
+                    <!-- recom  -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- <script type="module">
+    import nav from './components_d/navbar.js'
+    let navbar = document.getElementById('nav_d')
+    navbar.innerHTML=nav();
+
+    let subscribe = document.getElementById('subscribe')
+    subscribe.addEventListener("click",function (){
+        sub()
+    })
+    function sub(){
+        if(subscribe.innerText==='SUBSCRIBE'){
+            subscribe.innerText="SUBSCRIBED";
+            subscribe.style.backgroundColor="blue";
+            subscribe.style.marginLeft="20px"
+            subscribe.style.borderRadius="5px"
+            subscribe.style.border="none"
+            alert("You have Subscrbed To Get latest News")
+        }
+        else{
+            subscribe.innerText="SUBSCRIBE"
+            subscribe.style.backgroundColor="#2080e2";
+            subscribe.style.marginLeft="20px"
+            subscribe.style.border="none"
+            subscribe.style.borderRadius="5px"
+            alert("You have UnSubscrbed")
+        }
+        
+    }
+
+var popupFull = new popup({
+    dom: document.querySelector('.popup_full'),
+  });
+  document.querySelector('.hamburger').addEventListener('click', function () {
+    popupFull.show();
+  });
+</script> -->
+<script src="./scripts_d/int_news.js"></script>
