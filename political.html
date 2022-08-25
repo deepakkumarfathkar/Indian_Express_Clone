@@ -16,10 +16,15 @@
       <!-- import nav_bar  -->
 
     </div>
+    <p class="page_position">  <span>HOME</span>/ Political Pluse  </p>
     <div id="content_container">
-        <p class="page_position">    <!-- page position    -->  </p>
+       
          <div id="content_container_1_2">
+
+
             <h4>POLITICAL PULSE NEWS</h4>
+
+
            <div id="PULSE_NEWS_container">
                      <div id="PULSE_NEWS">
                                     <!-- append the sliding window  -->
@@ -27,24 +32,27 @@
                      <div id="EXPRESS">
                                      <!-- top news side wise -->
                      </div>
-           </div> 
-           
-            
+           </div>
+                     <hr type="solid" color="black"> 
+           <div id="qys">
+                                   <!-- top 3 news append hear -->
+           </div>
                 
-            <hr type="solid" color="black">
+                    <hr type="solid" color="black">
+            
             <div id="news_container">
 
-
-                         <!-- all political news and  -->
-
-
+                                 <!-- all political news and  -->
+            </div>
+            <div id="news_buttoon">
+                                     <!-- pagination  button -->
             </div>
      </div>
          
          
          <div  id="content_container_2_5">
             <div id="content_container_2">
-                <h4>BEST OF EXPRESS </h4>
+                <h4 id="BEST_heding">BEST OF EXPRESS </h4>
                 <hr>
                 
                        <!-- appending datas from api  -->
@@ -57,15 +65,12 @@
                     <h4>MUST READ</h4>
                     <hr>
                     
-                           <!-- appending datas from api  -->
+                           <!-- appending data from api  political news -->
 
                  </div>
 
              </div>
          </div>
-         
-
-
 
     </div>
 
@@ -107,5 +112,8 @@ var popupFull = new popup({
   document.querySelector('.hamburger').addEventListener('click', function () {
     popupFull.show();
   });
+
 </script>
+<script src="./scripts_d/index.js"></script>
+
 <script src="political.js"></script>
