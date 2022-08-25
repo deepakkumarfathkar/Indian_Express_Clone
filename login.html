@@ -41,13 +41,18 @@
                 <input type="email" name="" id="Insert_email_ns" placeholder=" Insert Phone Number/Email">
             </div>
             
-            <div class="login_input_div1">
+            <div id="login_input_div1">
                 <img id="login_lock_ns" src="https://indianexpress.com/wp-content/themes/indianexpress/images/evolok/locked.svg" alt="">
                 <input type="password" name="" id="Insert_password_ns" placeholder=" Password">
             </div>
-            <button  id="login_Con_btn_ns"  onclick="Con_btn_ns()" >Continue</button>
 
-            <button  id="login_regbtn_ns" >Sign In</button>
+            <div id="div_sign_Con_btn_ns">
+            <button  id="login_Con_btn_ns"  onclick="Con_btn_ns()" >Continue</button>
+             </div>
+
+            <div id="div_sign_regbtn_ns">
+            <button  id="login_regbtn_ns"  onclick="signINbtn_ns()" >Sign In</button>
+            </div>
 
             <div id="login_cancelbtn_ns" >
                 <button>Cancel</button>
@@ -65,8 +70,8 @@
 <script  type="module" >
 
     import navbar from "./components/nav.js"
-    console.log(navbar);
+    // console.log(navbar);
     let navdiv = document.getElementById("nav_sign_ns")
     navdiv.innerHTML = navbar()
     </script>
-<script src="login.js"></script>
+<script src="./scripts/login.js"></script>

@@ -229,7 +229,7 @@ font-size: 10px;
 outline: none;
 }
 
-.login_input_div1{
+#login_input_div1{
     display: flex;
     display: none;
     border-bottom: 1.5px solid rgb(205, 199, 199);
@@ -237,16 +237,17 @@ outline: none;
     padding: 5px;
 
 }
-.login_input_div1 > img  {
+#login_input_div1 > img  {
 width: 4%;
 height: 4%;
 margin-left: 2px;
 }
-.login_input_div1 > input{
+#login_input_div1 > input{
 border: none;
 margin-left: 2px;
 font-size: 10px;
 outline: none;
+
 }
 #login_Con_btn_ns{
     border: 1px solid blue;
@@ -270,7 +271,6 @@ outline: none;
 #login_regbtn_ns{
     border: 1px solid blue;
     width: 100%;
-    display: none;
     background-color: white;
     text-align: center;
     display: flex;
@@ -278,14 +278,16 @@ outline: none;
     border-radius: 5px;
     padding: 7px 0px;
     margin-top: 10px;
-    /* margin-bottom: 25px; */
     color: #3967d6;
     font-weight: bold;
 }
 #login_regbtn_ns:hover {
     background-color: #3967d6;
     color: white;
-  }
+}
+#div_sign_regbtn_ns{
+    display: none;
+}
   #login_bott_ns{
     text-align: center;
     font-size: 10px;
