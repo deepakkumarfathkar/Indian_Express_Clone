@@ -10,8 +10,18 @@ body{
     /* border: 1px solid black; */
     margin: auto;
     display: flex;
-    margin-top:100px ;
+    margin-top:0px ;
 } 
+#page_navigation{
+  
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+span{
+    color: rgb(203, 66, 66);
+}
  #content_container_1_2{
     width: 70%;
     height: auto;
