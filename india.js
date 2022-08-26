@@ -1,30 +1,18 @@
-let newsqury=JSON.parse(localStorage.getItem('newsobj'))
-function serchfunction(){
-    let obj={
-        query:document.getElementById('search').value
-       
-    }
-    
-    localStorage.setItem('newsobj',JSON.stringify(obj))
-     window.location.href="search.html"
-}
+
 var url = 'https://newsapi.org/v2/top-headlines?' +
 'country=in&'+ 
 'pageSize=15&' +
  'page=1&'+
  'apiKey=448bb457b22b421b9064cdf0689e842c';
-//  80732b8fea5a4855a6728ee0eee12001
-//  535406d3232541aebbaa0608736333dd
-// 43952ba56a2e4570b47285bb77628cb6
  
 
 let  getData=async ()=>{
     try {
-         let res =await fetch(`https://newsapi.org/v2/everything?q=indian political news&sortBy=relevancy&apiKey=448bb457b22b421b9064cdf0689e842c`)
+         let res =await fetch(`https://newsapi.org/v2/everything?q=india&sortBy=relevancy&apiKey=448bb457b22b421b9064cdf0689e842c`)
     let data =await res.json()
     let new_data=data.articles
     console.log(new_data)
-     appenddata(new_data)
+    appenddata(new_data)
     } catch (error) {
         console.log(error)
     }
@@ -61,11 +49,11 @@ let appenddata=(data)=>{
 }
 const getmustread=async ()=>{
     try {
-        let res =await fetch(url)
+        let res =await fetch(url+'&category=sports&category=entertainment')
         let data =await res.json()
         let nedata= data.articles
         console.log(nedata)
-         appenddatamustread(nedata)
+        appenddatamustread(nedata)
         
     } catch (error) {
         
@@ -102,10 +90,10 @@ let appenddatamustread=(data)=>{
 
 const getswapData=async ()=>{
    try {
-    let res =await fetch(`https://newsapi.org/v2/everything?q=indian political news&sortBy=publishedAt&apiKey=448bb457b22b421b9064cdf0689e842c`)
+    let res =await fetch(`https://newsapi.org/v2/everything?q=india&sortBy=publishedAt&apiKey=448bb457b22b421b9064cdf0689e842c`)
     let data =await res.json()
     let new_data=data.articles
-     getDataswap(new_data)
+    getDataswap(new_data)
    } catch (error) {
      console.log(error)
    }
@@ -192,12 +180,13 @@ const getDataswap=(data)=>{
 //everything?q=apple&from=2022-08-22&to=2022-08-24&sortBy=popularity&apiKey=API_KEY
 let  getData_news=async (page_number)=>{
    try {
-    // let urm = `https://newsapi.org/v2/everything?q=indian political news&sortBy=publishedAt&apiKey=43952ba56a2e4570b47285bb77628cb6&pageSize=20&page=${page_number}`;
-    let res =await fetch(`https://newsapi.org/v2/everything?q=indian political news&sortBy=publishedAt&apiKey=448bb457b22b421b9064cdf0689e842c&pageSize=20&page=${page_number}`)
+    let urm = `https://newsapi.org/v2/everything?q=india&sortBy=publishedAt&apiKey=448bb457b22b421b9064cdf0689e842c&pageSize=20&page=${page_number}`;
+    let res =await fetch(urm)
     let data =await res.json()
     let new_data=data.articles
     console.log(new_data)
      appendallnews(new_data)
+     appendlivevlogs(new_data)
    } catch (error) {
     
    }
@@ -254,3 +243,30 @@ const showButton=(result,per_page)=>{
 }
 
 showButton(100,20)
+const appendlivevlogs=(data)=>{
+    let livevloges=document.getElementById("livevloges")
+    let box=document.createElement('div')
+    let cout=0
+    data.forEach(({title}) => {
+        if(cout<4){
+        let box1=document.createElement('div')
+        let ttl=document.createElement('p')
+        ttl.setAttribute("font-weight",'medium')
+        ttl.innerText=title
+        box1.append(ttl)
+        box.append(box1)
+        cout++
+        }
+    });
+    livevloges.append(box)
+
+}
+let newsqury=JSON.parse(localStorage.getItem('newsobj'))
+function serchfunction(){
+    let obj={
+        query:document.getElementById('search').value
+    }
+    
+    localStorage.setItem('newsobj',JSON.stringify(obj))
+    window.location.href="search.html"
+}

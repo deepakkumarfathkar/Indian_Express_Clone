@@ -12,9 +12,9 @@ function nav(){
         <div id="input-all">
                 <div id="inputContainer">
                     <div class="inputDiv">
-                        <input type="text" class="search" placeholder="Search" oninput="debounce(main, 1000)">
+                        <input type="text" id="search" class="search" placeholder="Search" oninput="debounce(main, 1000)">
                     </div>
-                <img src="assets/search.png" class="search-icon">
+                <img src="assets/search.png"  onclick="serchfunction()" class="search-icon">
                 </div>
             <hr>
         </div>
