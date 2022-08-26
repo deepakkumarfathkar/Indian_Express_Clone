@@ -62,10 +62,15 @@ body{
 }
 
 .search-icon{
-    width: 12px;
+    width: 20px;
     /* height: 10px; */
-}
+   
+    padding: 2px;
 
+}
+.search-icon:hover{
+    cursor: pointer;
+}
 .inputDiv{
     display: flex;
     align-items: center;
