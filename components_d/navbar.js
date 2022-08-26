@@ -2,10 +2,10 @@ function nav(){
     return `<div class="navbar">
     <img src="assets/hamburger.png" class="hamburger">
     <div class="nav_left">
-        <p>Home</p>
-        <p>Political Plus</p>
-        <p>International News</p>
-        <p onclick="location.href='#'">Sign in</p>
+        <p onclick="location.href='index.html'">Home</p>
+        <p onclick="location.href='political.html'">Political Plus</p>
+        <p onclick="location.href='int_news.html.html'">International News</p>
+        <p onclick="location.href='login.html'">Sign in</p>
         <button id="subscribe">SUBSCRIBE</button>
     </div>
     <div class="nav_right">

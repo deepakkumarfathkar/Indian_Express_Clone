@@ -1,6 +1,6 @@
 *{
-    padding: 0px;
-    margin: 0px;
+    /* padding: 0px; */
+    /* margin: 0px; */
     box-sizing: border-box;
 }
 
@@ -131,6 +131,6 @@ body{
     width: 25px;
     margin-left: 20px;
 }
-hr{
+#input-all>hr{
     border: 2px solid white;
 }
