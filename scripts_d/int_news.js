@@ -2,26 +2,29 @@
 // http://127.0.0.1:5501/Unit_3/test/int_news.html
 // 0fb67e5dfd424b97bb4079f6c8238072
 // 503c800328a1466980f20a01d5373e81
+// 5374bd65d4e84539be177578470209af
 
 // let key="8f963edaf2d244dab58529d5734fb043";
 // let key = "0fb67e5dfd424b97bb4079f6c8238072";
-let key = "503c800328a1466980f20a01d5373e81";
+// let key = "503c800328a1466980f20a01d5373e81";
+let key = "5374bd65d4e84539be177578470209af";
 //  au ru ua jp
-let country_code="us"
-if(sd){
-
-}
 
 var url =
-  "https://newsapi.org/v2/top-headlines?" + "country=us&" + "category=science&" + `apiKey=${key}`;
+  "https://newsapi.org/v2/top-headlines?" +
+  "country=us&" +
+  "pageSize=15&" +
+  "page=1&" +
+  `apiKey=${key}`;
 
 let getDataDee = async () => {
   try {
-    let res = await fetch(url);
+    let res = await fetch(
+      `https://newsapi.org/v2/top-headlines?country=us&sortBy=relevancy&apiKey=${key}`
+    );
     let data = await res.json();
-    console.log("data:", data);
     let new_data = data.articles;
-    // console.log(new_data)
+    console.log(new_data);
     appendDataDee(new_data);
   } catch (error) {
     console.log(error);
@@ -31,10 +34,15 @@ getDataDee();
 
 let appendDataDee = (data) => {
   let content = document.getElementById("main_container_dk_1");
-  data.forEach(({ urlToImage, title }) => {
-    if (urlToImage != undefined) {
+  let no_new = 0;
+  data.forEach(({ urlToImage, title, url }) => {
+    if (urlToImage != undefined && no_new <= 25) {
       let box1 = document.createElement("div");
-      box1.addEventListener("click", function () {});
+      box1.addEventListener("click", function () {
+        box1.addEventListener("click", function () {
+          window.open(url);
+        });
+      });
       let imag = document.createElement("img");
       imag.src = urlToImage;
       let box = document.createElement("div");
@@ -44,6 +52,7 @@ let appendDataDee = (data) => {
       box1.append(imag, box);
       content.append(box1);
     }
+    no_new++;
   });
 };
 const getTop = async () => {
@@ -59,10 +68,14 @@ getTop();
 
 let appendTop = (data) => {
   let content = document.getElementById("recomodation_d");
-  data.forEach(({ urlToImage, title }) => {
+  data.forEach(({ urlToImage, title, url }) => {
     if (urlToImage != undefined) {
       let box1 = document.createElement("div");
-      box1.addEventListener("click", function () {});
+      box1.addEventListener("click", function () {
+        box1.addEventListener("click", function () {
+          window.open(url);
+        });
+      });
       let imag = document.createElement("img");
       imag.src = urlToImage;
       let box = document.createElement("div");
@@ -77,7 +90,9 @@ let appendTop = (data) => {
 
 const slidData = async () => {
   try {
-    let res = await fetch(url + "&sortBy=publishedAt");
+    let res = await fetch(
+      `https://newsapi.org/v2/top-headlines?country=us&sortBy=publishedAt&apiKey=${key}`
+    );
     let data = await res.json();
     let new_data = data.articles;
     appendSlid(new_data);
@@ -93,7 +108,11 @@ const appendSlid = (data) => {
   setInterval(() => {
     container.innerHTML = "";
     let box = document.createElement("div");
-    box.addEventListener("click", function () {});
+    box.addEventListener("click", function () {
+      box.addEventListener("click", function () {
+        window.open(data[cout].url);
+      });
+    });
     box.setAttribute("id", "intr_news_1");
     let box1 = document.createElement("div");
     let image = document.createElement("img");
@@ -129,27 +148,49 @@ const appendSlid = (data) => {
   top_div2.append(image6, title6);
 
   top_news_d.append(top_div1, top_div2);
+
+  let below_contar = document.getElementById("top_news_d_1");
+  let newscout = 7;
+  data.forEach((el) => {
+    if (newscout <= 7 || newscout < 10) {
+      let box_contr = document.createElement("div");
+      box_contr.addEventListener("click", function () {
+        window.open(data[newscout].url);
+      });
+      let bimg = document.createElement("img");
+      bimg.src = data[newscout].urlToImage;
+      let btitl = document.createElement("h6");
+      btitl.innerText = data[newscout].title;
+      box_contr.append(bimg, btitl);
+      below_contar.append(box_contr);
+      newscout++;
+    }
+  });
 };
 
-let inter_NewsDee = async () => {
+let inter_NewsDee = async (page_number) => {
   try {
-    let urm = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${key}`;
+    let urm = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${key}&page=${page_number}`;
     let res = await fetch(urm);
     let data = await res.json();
-    console.log("data:", data);
     let new_data = data.articles;
     console.log(new_data);
     appendIntDeeNews(new_data);
   } catch (error) {}
 };
 
-inter_NewsDee();
+let j = 1;
+window.onload = inter_NewsDee(j);
 
 const appendIntDeeNews = (data) => {
   let container = document.getElementById("international_news");
+  container.innerHTML = null;
   data.forEach((el) => {
     let box = document.createElement("div");
-    box.setAttribute("class", "inside_international");
+    box.setAttribute("class", "international_news_inner");
+    box.addEventListener("click", function () {
+      window.open(el.url);
+    });
     let boximg = document.createElement("div");
     let image = document.createElement("img");
     image.src = el.urlToImage;
@@ -167,3 +208,96 @@ const appendIntDeeNews = (data) => {
     container.append(box, line);
   });
 };
+
+const pageButton = (result, per_page) => {
+  document.getElementById("pagination_dk").innerHTML = "";
+  let buttons = Math.ceil(result / per_page);
+  for (let i = 1; i <= buttons; i++) {
+    let btn = document.createElement("button");
+    btn.innerHTML = i;
+    btn.addEventListener("click", function () {
+      inter_NewsDee(i);
+    });
+    document.getElementById("pagination_dk").append(btn);
+  }
+};
+
+pageButton(100, 20);
+
+let inputBox = document.querySelector(".search");
+
+let timeout;
+let container = document.querySelector("#searchResult");
+
+async function main() {
+  try {
+    let query1 = document.querySelector(".search").value;
+    // console.log('query:', query.toUpperCase())
+    let query = query1.toUpperCase();
+    console.log("query:", query);
+
+    if (query == "") {
+      container.style.display = "none";
+    }
+    if (query === "USA") {
+      let qs = "us";
+      let res = await fetch(
+        `https://newsapi.org/v2/top-headlines?country=${qs}&apiKey=${key}`
+      );
+      let data = await res.json();
+
+      let new_data = data.articles;
+      console.log(new_data);
+      appendIntDeeNews(new_data);
+    }
+    if (query === "AUSTRALIA") {
+      let qs = "au";
+      let res = await fetch(
+        `https://newsapi.org/v2/top-headlines?country=${qs}&apiKey=${key}`
+      );
+      let data = await res.json();
+
+      let new_data = data.articles;
+      console.log(new_data);
+      appendIntDeeNews(new_data);
+    }
+    if (query === "RUSSIA") {
+      let qs = "ru";
+      let res = await fetch(
+        `https://newsapi.org/v2/top-headlines?country=${qs}&apiKey=${key}`
+      );
+      let data = await res.json();
+
+      let new_data = data.articles;
+      console.log(new_data);
+      appendIntDeeNews(new_data);
+    }
+    if (query === "INDIA") {
+      let qs = "in";
+      let res = await fetch(
+        `https://newsapi.org/v2/top-headlines?country=${qs}&apiKey=${key}`
+      );
+      let data = await res.json();
+
+      let new_data = data.articles;
+      console.log(new_data);
+      appendIntDeeNews(new_data);
+    }
+
+    // catch
+  } catch (error) {
+    console.log(error);
+  }
+
+  
+}
+
+function debounce(func, delay) {
+  if (timeout) {
+    clearTimeout(timeout);
+  }
+
+  timeout = setTimeout(function () {
+    func();
+  }, delay);
+}
