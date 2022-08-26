@@ -46,58 +46,164 @@
 
 
     #footer_blw_ns{
-        border: 1px solid white;
+        margin-left: 10px;
+        margin-right: 10px;
+        /* background-color: #EEEEEE; */
+        border-top: 1px solid #787677;
+        border-bottom: 1px solid #787677;
         display: flex;
         color: white;
+        margin-top: 9px;
         padding: 10px 0px;
     }
     #footer_blw_ns1{
         width: 25%;
-        border: 1px solid green;
+        border-right: 1px solid #787677;
         height: 220px;
+        margin-right: 5px;
     }
     #footer_blw_ns3{
         width: 25%;
         height: 220px;
-
-        border: 1px solid green;
+        padding-left: 5px;
+        border-left: 1px solid #787677;
     }
     #footer_blw_ns2{
         height: 220px;
 
         width: 50%;
-        border: 1px solid yellowgreen;
+        /* border: 1px solid yellowgreen; */
     }
-    .footer_blw_sub_ns1{
-        border: 1px solid yellow;
+    #footer_blw_sub_ns1{
+        border-bottom: 1px solid #787677;
         height: 50%;
+        margin-left: 5px;
+        margin-right: 5px;
+        /* margin-bottom: 5px; */
+    }
+    #footer_blw_sub1_ns1{
+        /* border-bottom: 1px solid #787677; */
+        height: 50%;
+        margin-left: 5px;
+        margin-right: 5px;
+        /* margin-bottom: 5px; */
     }
     #media_icons_ns >img{
         border: 1px solid red;
     }
-    #media_icons_ns >img{
+    #media_icons_ns > a >img{
         width: 10%;
         height: 10%;
         margin-right: 3px;
     }
+    #media_icons_ns > a {
+        text-decoration: none;   
+    }
     .soc_heads_ns{
-        border: 1px solid white;
+        /* border: 1px solid white; */
+       
         font-weight: bold;
         font-family: 'Roboto', sans-serif;
         color: #787677;
-        font-size: 9px;
+        font-size: 9.8px;
         margin-bottom: 5px;
     }
     .soc_img_div_ns{
-        border: 1px solid white;
+        /* border: 1px solid white; */
         margin-bottom: 5px;
     }
     #newGuard > img {
-        width: 50%;
-        color: green;
-        height: 50%;
+        width: 80%;
+        height: 70%;
+        /* background-color: #EEEEEE; */
     }
     #newGuard{
-        margin-left: 10px;
-        margin-top: 5px;
+        /* margin-left: 10px; */
+        margin-top: 10px;
+        width: 90%;
+        height: 30%;
+        /* border: 1PX solid red; */
+    }
+    #main_newsguard_ns{
+        /* border: 1px solid blue; */
+        display: flex;
+        font-size: 9px;
+        height: 80%;
+        font-family: 'Roboto', sans-serif;
+        color: #787677;
+        line-height: 10px;
+    }
+    #newGuard_con_ns{
+        /* border:  3px solid green; */
+
+    }
+    #newSym_ns > img{
+        width: 50%;
+        /* background-color: #EEEEEE; */
+        height: 50%;
+        margin-top: 7px;
+    }
+    .footer_blw_head_ns2{
+        /* border: 3px solid white; */
+        font-size: 10px;
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+        color: #787677;
+    }
+
+
+
+
+    /* //express group  */
+    #footer_blw_Con_ns2{
+        /* border: 3px solid yellow; */
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 5px;
+    }
+    #footer_blw_Con_ns2 > div{
+        /* border: 1px solid blueviolet; */
+    }
+    #footer_blw_Con_ns2 > div > a{
+        text-decoration: none;
+        font-size: 10px;
+        color: #EEEEEE;
+        font-size: 9px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+
+
+
+    /* // quick link here  */
+    #footer_blw_Con_quick_ns2{
+        /* border: 3px solid yellow; */
+        
+    }
+    #footer_blw_Con_quick_ns2 > div{
+        /* border: 1px solid blueviolet; */
+    }
+    #footer_blw_Con_quick_ns2 > div > a{
+        text-decoration: none;
+        font-size: 10px;
+        color: #EEEEEE;
+        font-size: 9px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+
+    /* // last here */
+    #footer_last_ns{
+       display: flex;
+       justify-content: space-between;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-family: 'Roboto', sans-serif;
+        color: #787677;
+        font-size: 9px;
+    }
+    #footer_last_ns > img{
+        width: 20%;
+        height: 20%;
     }
