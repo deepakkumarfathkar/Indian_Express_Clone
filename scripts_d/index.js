@@ -62,4 +62,18 @@ window.popup = function (o) {
         document.body.classList.remove("popup_show");
     }
   };
- 
+  
+  const stickyCheck = (item) => {
+      const elementPosition = item.offsetTop;
+
+      if (window.pageYOffset >= elementPosition) {
+          item.classList.add("sticky");
+      } else {
+          item.classList.remove("sticky");
+      }
+  };
+
+  window.addEventListener("scroll", () => {
+      const element = document.querySelector("#nav_d");
+      stickyCheck(element);
+  });

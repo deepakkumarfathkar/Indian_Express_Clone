@@ -143,19 +143,3 @@
 </script>
 <script src="./scripts_d/index.js"></script>
 <script src="./scripts_d/sports.js"></script>
-<script>
-    const stickyCheck = (item) => {
-        const elementPosition = item.offsetTop;
-
-        if (window.pageYOffset >= elementPosition) {
-            item.classList.add("sticky");
-        } else {
-            item.classList.remove("sticky");
-        }
-    };
-
-    window.addEventListener("scroll", () => {
-        const element = document.querySelector("#nav_d");
-        stickyCheck(element);
-    });
-</script>
