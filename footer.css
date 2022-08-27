@@ -5,8 +5,9 @@
     #footer_ns{
         /* border: 2px solid orange; */
         background-color: black;
-        width: 62%;
+        width: 72%;
         margin: auto;
+      
     }
     .top_div_fns{
         /* border: 1px solid red; */
@@ -34,7 +35,7 @@
     .top_cate_Content_fns > div > li > a{ 
         text-decoration: none;
         color: #EEEEEE;
-        font-size: 9px;
+        font-size: 14px;
         margin-left: 4px;
         font-family: 'Roboto', sans-serif;
         
@@ -168,9 +169,9 @@
     }
     #footer_blw_Con_ns2 > div > a{
         text-decoration: none;
-        font-size: 10px;
+        font-size: 11px;
         color: #EEEEEE;
-        font-size: 9px;
+        font-size: 11px;
         font-family: 'Roboto', sans-serif;
     }
 
@@ -187,9 +188,9 @@
     }
     #footer_blw_Con_quick_ns2 > div > a{
         text-decoration: none;
-        font-size: 10px;
+      
         color: #EEEEEE;
-        font-size: 9px;
+        font-size: 11px;
         font-family: 'Roboto', sans-serif;
     }
 
@@ -208,4 +209,7 @@
     #footer_last_ns > img{
         width: 20%;
         height: 20%;
+    }
+    li a{
+        font-weight: 300;
     }
