@@ -12,29 +12,16 @@ body {
   width: 100%;
   top: 1px;
 }
-/* .navbar {
+.navbar {
+  left: 0px;
   width: 100%;
   background-color: #1f1f1f;
-  height: 80px;
+  height: 60px;
   display: flex;
   align-items: center;
   padding: 0px 50px;
   justify-content: space-between;
-} */
-
-
-.navbar{
-    
-    /* top: 100px; */
-    left: 0px;
-    width: 100%;
-    background-color: #1f1f1f;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    padding: 0px 50px;
-    justify-content: space-between;
-    overflow: auto;
+  overflow: auto;
 }
 
 .hamburger {
@@ -42,15 +29,13 @@ body {
   margin-right: 15px;
   cursor: pointer;
   opacity: 70%;
-  /* margin-top: 10px; */
-
 }
 .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    overflow: auto;
-  }
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: auto;
+}
 
 .logo {
   width: 115px;
@@ -86,7 +71,6 @@ body {
 
 .search-icon {
   width: 20px;
-  /* height: 10px; */
 
   padding: 2px;
 }
