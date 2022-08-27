@@ -25,11 +25,12 @@
   width: 100%;
 }</style>
 
+
 <body style= "width: 100%; margin: auto;">
     <div id="top_header_s"></div>
 
     <div id="nav_d" style="width: 100%; margin: auto; text-align: center;"></div>
-    
+
     <div id="advertisement_s">advirtisement</div>
     <hr>
     <div id="box_s">
@@ -184,8 +185,8 @@
     <div id="lifestyle_s"></div>
 </div>
 </div>
-
-<div>
+<!-- Footer Part -->
+<div >
     <h1>Fotter</h1>
 </div>
 </body>
@@ -282,7 +283,9 @@
 
   </script>
   <script type="module">
+
     import nav from './components_d/navbar.js'
+
     let navbar = document.getElementById('nav_d')
     navbar.innerHTML=nav();
 
@@ -317,6 +320,7 @@ var popupFull = new popup({
     popupFull.show();
   });
 
+
 window.onscroll = function() {myFunction()};
 
 var navbars = document.getElementById("navbars");
@@ -335,3 +339,4 @@ function myFunction() {
 
 </script>
 <script src="./scripts_d/index.js"></script>
+
