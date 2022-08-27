@@ -7,18 +7,28 @@
     <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
     <link rel="stylesheet" href="./style_s/style.css">
+    <link rel="shortcut icon" href="assets/tab.png" />
+    <link rel="stylesheet" href="./styles_d/style.css">
+    <link rel="stylesheet" href="./styles_d/navpop.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
+<style>
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}</style>
 
-<body style= "width: 80%; margin: auto;">
+<body style= "width: 100%; margin: auto;">
     <div id="top_header_s"></div>
 
-    <div><h1>Navbar</h1></div>
+    <div id="nav_d" style="width: 100%; margin: auto; text-align: center;"></div>
     
     <div id="advertisement_s">advirtisement</div>
     <hr>
@@ -271,3 +281,57 @@
  
 
   </script>
+  <script type="module">
+    import nav from './components_d/navbar.js'
+    let navbar = document.getElementById('nav_d')
+    navbar.innerHTML=nav();
+
+    let subscribe = document.getElementById('subscribe')
+    subscribe.addEventListener("click",function (){
+        sub()
+    })
+    function sub(){
+        if(subscribe.innerText==='SUBSCRIBE'){
+            subscribe.innerText="SUBSCRIBED";
+            subscribe.style.backgroundColor="blue";
+            subscribe.style.marginLeft="20px"
+            subscribe.style.borderRadius="5px"
+            subscribe.style.border="none"
+            alert("You have Subscrbed To Get latest News")
+        }
+        else{
+            subscribe.innerText="SUBSCRIBE"
+            subscribe.style.backgroundColor="#2080e2";
+            subscribe.style.marginLeft="20px"
+            subscribe.style.border="none"
+            subscribe.style.borderRadius="5px"
+            alert("You have UnSubscrbed")
+        }
+        
+    }
+
+var popupFull = new popup({
+    dom: document.querySelector('.popup_full'),
+  });
+  document.querySelector('.hamburger').addEventListener('click', function () {
+    popupFull.show();
+  });
+
+window.onscroll = function() {myFunction()};
+
+var navbars = document.getElementById("navbars");
+var sticky = navbars.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbars.classList.add("sticky")
+    console.log("wow")
+  } 
+  else {
+    console.log("wow")
+    navbars.classList.remove("sticky");
+  }
+}
+
+</script>
+<script src="./scripts_d/index.js"></script>

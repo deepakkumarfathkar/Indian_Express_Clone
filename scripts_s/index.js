@@ -1,4 +1,13 @@
-
+let newsqury=JSON.parse(localStorage.getItem('newsobj'))
+function serchfunction(){
+    let obj={
+        query:document.getElementById('search').value
+       
+    }
+    
+    localStorage.setItem('newsobj',JSON.stringify(obj))
+     window.location.href="search.html"
+}
 
 
 let getData = async()=>{

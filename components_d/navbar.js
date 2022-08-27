@@ -1,5 +1,5 @@
 function nav(){
-    return `<div class="navbar">
+    return `<div class="navbar" id="navbars">
     <img src="assets/hamburger.png" class="hamburger">
     <div class="nav_left">
         <p onclick="location.href='index.html'">Home</p>
