@@ -12,7 +12,7 @@ var url = 'https://newsapi.org/v2/top-headlines?' +
 'country=in&'+ 
 'pageSize=15&' +
  'page=1&'+
- 'apiKey=448bb457b22b421b9064cdf0689e842c';
+ 'apiKey=80732b8fea5a4855a6728ee0eee12001';
 //  80732b8fea5a4855a6728ee0eee12001
 //  535406d3232541aebbaa0608736333dd
 // 43952ba56a2e4570b47285bb77628cb6
@@ -20,7 +20,7 @@ var url = 'https://newsapi.org/v2/top-headlines?' +
 
 let  getData=async ()=>{
     try {
-         let res =await fetch(`https://newsapi.org/v2/everything?q=indian political news&sortBy=relevancy&apiKey=448bb457b22b421b9064cdf0689e842c`)
+         let res =await fetch(`https://newsapi.org/v2/everything?q=indian political news&sortBy=relevancy&apiKey=80732b8fea5a4855a6728ee0eee12001`)
     let data =await res.json()
     let new_data=data.articles
     console.log(new_data)
@@ -102,7 +102,7 @@ let appenddatamustread=(data)=>{
 
 const getswapData=async ()=>{
    try {
-    let res =await fetch(`https://newsapi.org/v2/everything?q=indian political&sortBy=publishedAt&apiKey=448bb457b22b421b9064cdf0689e842c`)
+    let res =await fetch(`https://newsapi.org/v2/everything?q=indian political&sortBy=publishedAt&apiKey=80732b8fea5a4855a6728ee0eee12001`)
     let data =await res.json()
     let new_data=data.articles
      getDataswap(new_data)
@@ -193,7 +193,7 @@ const getDataswap=(data)=>{
 let  getData_news=async (page_number)=>{
    try {
     // let urm = `https://newsapi.org/v2/everything?q=indian political news&sortBy=publishedAt&apiKey=43952ba56a2e4570b47285bb77628cb6&pageSize=20&page=${page_number}`;
-    let res =await fetch(`https://newsapi.org/v2/everything?q=indian political news&sortBy=publishedAt&apiKey=448bb457b22b421b9064cdf0689e842c&pageSize=20&page=${page_number}`)
+    let res =await fetch(`https://newsapi.org/v2/everything?q=indian political news&sortBy=publishedAt&apiKey=80732b8fea5a4855a6728ee0eee12001&pageSize=20&page=${page_number}`)
     let data =await res.json()
     let new_data=data.articles
     console.log(new_data)
