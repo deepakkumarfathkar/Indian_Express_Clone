@@ -16,20 +16,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="footer.css">
+
     <title>Document</title>
 </head>
-<style>
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}</style>
+
+
 
 <body style= "width: 100%; margin: auto;">
     <div id="top_header_s"></div>
 
     <div id="nav_d" style="width: 100%; margin: auto; text-align: center;"></div>
-    
+
     <div id="advertisement_s">advirtisement</div>
     <hr>
     <div id="box_s">
@@ -184,9 +182,12 @@
     <div id="lifestyle_s"></div>
 </div>
 </div>
+ <!-- footer is here  -->
 
-<div>
-    <h1>Fotter</h1>
+<div id="footer_main_ns">
+  <div id="footer_ns">
+      <!-- import and append the footer part -->
+</div>
 </div>
 </body>
 </html>
@@ -282,7 +283,9 @@
 
   </script>
   <script type="module">
+
     import nav from './components_d/navbar.js'
+
     let navbar = document.getElementById('nav_d')
     navbar.innerHTML=nav();
 
@@ -317,21 +320,33 @@ var popupFull = new popup({
     popupFull.show();
   });
 
-window.onscroll = function() {myFunction()};
 
-var navbars = document.getElementById("navbars");
-var sticky = navbars.offsetTop;
+// window.onscroll = function() {myFunction()};
 
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbars.classList.add("sticky")
-    console.log("wow")
-  } 
-  else {
-    console.log("wow")
-    navbars.classList.remove("sticky");
-  }
-}
+// var navbars = document.getElementById("navbars");
+// var sticky = navbars.offsetTop;
+
+// function myFunction() {
+//   if (window.pageYOffset >= sticky) {
+//     navbars.classList.add("sticky")
+//     console.log("wow")
+//   } 
+//   else {
+//     console.log("wow")
+//     navbars.classList.remove("sticky");
+//   }
+// }
 
 </script>
 <script src="./scripts_d/index.js"></script>
+
+
+<script type="module" >
+
+  import  footer from "./components/footer.js"
+
+  console.log(footer)
+
+  document.getElementById("footer_ns").innerHTML = footer()
+
+</script>

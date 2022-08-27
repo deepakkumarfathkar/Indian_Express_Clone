@@ -1,8 +1,10 @@
-    body{
-        background-color: black;
-    }
+   #footer_main_ns{
+    width: 100%;
+    background-color: black;
+   }
     #footer_ns{
         /* border: 2px solid orange; */
+        background-color: black;
         width: 62%;
         margin: auto;
     }
