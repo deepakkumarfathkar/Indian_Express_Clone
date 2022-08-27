@@ -28,6 +28,7 @@ let obj = {
 
 arr.push(obj);
 localStorage.setItem('user_data', JSON.stringify(arr));
+window.location.href="login.html"
 }
     
  

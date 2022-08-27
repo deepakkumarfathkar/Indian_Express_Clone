@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./styles_d/style.css">
     <link rel="stylesheet" href="./styles_d/navpop.css">
     <link rel="stylesheet" href="./style_s/style.css">
+    <link rel="stylesheet" href="footer.css">
+
     <title>Document</title>
 </head>
 
@@ -82,6 +84,11 @@
 
     </div>
 
+    <div id="footer_main_ns">
+        <div id="footer_ns">
+            <!-- import and append the footer part -->
+      </div>
+      </div>
 
 </body>
 
@@ -139,7 +146,12 @@
     let time = document.getElementById("time_s");
     time.innerHTML = `${day}, ${month} ${date} ${year}`
 
+    import  footer from "./components/footer.js"
 
+    console.log(footer)
+
+    document.getElementById("footer_ns").innerHTML = footer()
 </script>
 <script src="./scripts_d/index.js"></script>
 <script src="./scripts_d/sports.js"></script>
+
