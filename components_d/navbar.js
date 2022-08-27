@@ -3,7 +3,9 @@ function nav(){
     <img src="assets/hamburger.png" class="hamburger">
     <div class="nav_left">
         <p onclick="location.href='index.html'">Home</p>
+        <p onclick="location.href='india.html'">India</p>
         <p onclick="location.href='political.html'">Political Plus</p>
+        <p onclick="location.href='sports.html'">Sports</p>
         <p onclick="location.href='int_news.html.html'">International News</p>
         <p onclick="location.href='login.html'">Sign in</p>
         <button id="subscribe">SUBSCRIBE</button>
