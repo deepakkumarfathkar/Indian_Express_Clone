@@ -5,20 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles_d/int_news.css">
+    <link rel="stylesheet" href="./styles_d/sports.css">
     <link rel="shortcut icon" href="assets/tab.png" />
     <link rel="stylesheet" href="./styles_d/style.css">
     <link rel="stylesheet" href="./styles_d/navpop.css">
+    <link rel="stylesheet" href="./style_s/style.css">
     <title>Document</title>
 </head>
 
 <body>
+    <div id="top_header_s"></div>
+
     <div id="nav_d">
         <!-- import nav_bar  -->
     </div>
-    <p class="page_pos_d">
+    <p class="sports_pos_d">
     <div id="page_nav_d">
-        <span>HOME</span>/ International News </p>
+        <span>HOME</span>/ Sports News </p>
     </div>
 
     <div id="main_container_d">
@@ -26,7 +29,7 @@
         <div id="main_container_d_1">
 
 
-            <h4>INTERNATIONAL NEWS</h4>
+            <h4>Sports NEWS</h4>
 
 
             <div id="int_container">
@@ -44,9 +47,9 @@
 
             <hr type="solid" color="black">
 
-            <div id="international_news">
+            <div id="sports_news">
 
-                <!-- all international news and  -->
+                <!-- all Sports news and  -->
             </div>
             <div id="pagination_dk">
                 <!-- pagination -->
@@ -63,6 +66,7 @@
 
 
             </div>
+            <hr>
             <div>
 
                 <div id="recomodation_d">
@@ -117,12 +121,28 @@
     document.querySelector('.hamburger').addEventListener('click', function () {
         popupFull.show();
     });
+    // top nav
+    import top_header from "./components_s/topheader.js"
+    console.log(top_header);
+    let top_header_s = document.getElementById("top_header_s");
+    top_header_s.innerHTML = top_header();
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
+    let d = new Date();
+    let day = days[d.getDay()];
+    let month = months[d.getMonth()];
+    let year = d.getFullYear();
+    const date = d.getDate();
+    d.getTime();
+    console.log(month, day, date, year);
+    let time = document.getElementById("time_s");
+    time.innerHTML = `${day}, ${month} ${date} ${year}`
 
 
 </script>
 <script src="./scripts_d/index.js"></script>
-<script src="./scripts_d/int_news.js"></script>
+<script src="./scripts_d/sports.js"></script>
 <script>
     const stickyCheck = (item) => {
         const elementPosition = item.offsetTop;
