@@ -16,6 +16,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="footer.css">
+
     <title>Document</title>
 </head>
 <style>
@@ -186,8 +188,12 @@
 </div>
 </div>
 <!-- Footer Part -->
-<div >
-    <h1>Fotter</h1>
+
+
+<div id="footer_main_ns">
+  <div id="footer_ns">
+      <!-- import and append the footer part -->
+</div>
 </div>
 </body>
 </html>
@@ -340,3 +346,13 @@ function myFunction() {
 </script>
 <script src="./scripts_d/index.js"></script>
 
+
+<script type="module" >
+
+  import  footer from "./components/footer.js"
+
+  console.log(footer)
+
+  document.getElementById("footer_ns").innerHTML = footer()
+
+</script>
