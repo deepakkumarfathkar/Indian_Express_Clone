@@ -1,18 +1,15 @@
-// https://newsapi.org/v2/top-headlines?country=us&apiKey=8f963edaf2d244dab58529d5734fb043
 // http://127.0.0.1:5501/Unit_3/test/int_news.html
 // 0fb67e5dfd424b97bb4079f6c8238072
 // 503c800328a1466980f20a01d5373e81
-// 5374bd65d4e84539be177578470209af
 
-// let key="8f963edaf2d244dab58529d5734fb043";
 // let key = "0fb67e5dfd424b97bb4079f6c8238072";
-// let key = "503c800328a1466980f20a01d5373e81";
-let key = "5374bd65d4e84539be177578470209af";
+let key = "503c800328a1466980f20a01d5373e81";
+
 //  au ru ua jp
 
 var url =
   "https://newsapi.org/v2/top-headlines?" +
-  "country=us&" +
+  "country=in&" +
   "pageSize=15&" +
   "page=1&" +
   `apiKey=${key}`;
@@ -20,7 +17,7 @@ var url =
 let getDataDee = async () => {
   try {
     let res = await fetch(
-      `https://newsapi.org/v2/top-headlines?country=us&sortBy=relevancy&apiKey=${key}`
+      `https://newsapi.org/v2/everything?q=sports&sortBy=relevancy&apiKey=${key}`
     );
     let data = await res.json();
     let new_data = data.articles;
@@ -91,7 +88,7 @@ let appendTop = (data) => {
 const slidData = async () => {
   try {
     let res = await fetch(
-      `https://newsapi.org/v2/top-headlines?country=us&sortBy=publishedAt&apiKey=${key}`
+      `https://newsapi.org/v2/everything?q=sports&sortBy=publishedAt&apiKey=${key}`
     );
     let data = await res.json();
     let new_data = data.articles;
@@ -170,7 +167,7 @@ const appendSlid = (data) => {
 
 let inter_NewsDee = async (page_number) => {
   try {
-    let url1 = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${key}&page=${page_number}`;
+    let url1 = `https://newsapi.org/v2/everything?q=sports&sortBy=publishedAt&apiKey=${key}&page=${page_number}`;
     let res = await fetch(url1);
     let data = await res.json();
     let new_data = data.articles;
@@ -183,11 +180,11 @@ let j = 1;
 window.onload = inter_NewsDee(j);
 
 const appendIntDeeNews = (data) => {
-  let container = document.getElementById("international_news");
+  let container = document.getElementById("sports_news");
   container.innerHTML = null;
   data.forEach((el) => {
     let box = document.createElement("div");
-    box.setAttribute("class", "international_news_inner");
+    box.setAttribute("class", "sports_news_inner");
     box.addEventListener("click", function () {
       window.open(el.url);
     });
@@ -223,81 +220,3 @@ const pageButton = (result, per_page) => {
 };
 
 pageButton(100, 20);
-
-let inputBox = document.querySelector(".search");
-
-let timeout;
-let container = document.querySelector("#searchResult");
-
-async function main() {
-  try {
-    let query1 = document.querySelector(".search").value;
-    // console.log('query:', query.toUpperCase())
-    let query = query1.toUpperCase();
-    console.log("query:", query);
-
-    if (query == "") {
-      container.style.display = "none";
-    }
-    if (query === "USA") {
-      let qs = "us";
-      let res = await fetch(
-        `https://newsapi.org/v2/top-headlines?country=${qs}&apiKey=${key}`
-      );
-      let data = await res.json();
-
-      let new_data = data.articles;
-      console.log(new_data);
-      appendIntDeeNews(new_data);
-    }
-    if (query === "AUSTRALIA") {
-      let qs = "au";
-      let res = await fetch(
-        `https://newsapi.org/v2/top-headlines?country=${qs}&apiKey=${key}`
-      );
-      let data = await res.json();
-
-      let new_data = data.articles;
-      console.log(new_data);
-      appendIntDeeNews(new_data);
-    }
-    if (query === "RUSSIA") {
-      let qs = "ru";
-      let res = await fetch(
-        `https://newsapi.org/v2/top-headlines?country=${qs}&apiKey=${key}`
-      );
-      let data = await res.json();
-
-      let new_data = data.articles;
-      console.log(new_data);
-      appendIntDeeNews(new_data);
-    }
-    if (query === "INDIA") {
-      let qs = "in";
-      let res = await fetch(
-        `https://newsapi.org/v2/top-headlines?country=${qs}&apiKey=${key}`
-      );
-      let data = await res.json();
-
-      let new_data = data.articles;
-      console.log(new_data);
-      appendIntDeeNews(new_data);
-    }
-
-    // catch
-  } catch (error) {
-    console.log(error);
-  }
-
-  
-}
-
-function debounce(func, delay) {
-  if (timeout) {
-    clearTimeout(timeout);
-  }
-
-  timeout = setTimeout(function () {
-    func();
-  }, delay);
-}
