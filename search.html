@@ -8,9 +8,11 @@
     <link rel="shortcut icon" href="assets/tab.png" />
     <link rel="stylesheet" href="./styles_d/style.css">
     <link rel="stylesheet" href="./styles_d/navpop.css">
+    <link rel="stylesheet" href="./style_s/style.css">
     <title>Document</title>
 </head>
 <body>
+    <div id="top_header_s"></div>
     <div id="nav_d">
     
       <!-- import nav_bar  -->
@@ -114,6 +116,23 @@ var popupFull = new popup({
   document.querySelector('.hamburger').addEventListener('click', function () {
     popupFull.show();
   });
+
+  import top_header from "./components_s/topheader.js"
+    console.log(top_header);
+    let top_header_s = document.getElementById("top_header_s");
+    top_header_s.innerHTML = top_header();
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    let d = new Date();
+    let day = days[d.getDay()];
+    let month = months[d.getMonth()];
+    let year = d.getFullYear();
+    const date = d.getDate();
+    d.getTime();
+    console.log(month, day, date, year);
+    let time = document.getElementById("time_s");
+    time.innerHTML = `${day}, ${month} ${date} ${year}`
 
 </script>
 <script src="./scripts_d/index.js"></script>
