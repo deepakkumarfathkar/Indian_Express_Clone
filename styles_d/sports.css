@@ -16,7 +16,7 @@ body {
   margin-top: 100px;
   margin-bottom: 20px;
 }
-span {
+#page_nav_d>span {
   color: rgb(203, 66, 66);
 }
 #main_container_d_1 {

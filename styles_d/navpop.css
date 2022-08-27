@@ -133,6 +133,7 @@ ul.topicsbox_d>li {
     float: left;
     width: 150px;
     margin: 0 15px;
+    text-align: right;
 }
 .clear_d, .topicsbox_d {
     clear: both;
@@ -183,3 +184,4 @@ ul>li>a:hover,
 ul>li{
     list-style-type: none;
 }
+
