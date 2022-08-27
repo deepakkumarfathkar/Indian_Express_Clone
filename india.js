@@ -3,12 +3,12 @@ var url = 'https://newsapi.org/v2/top-headlines?' +
 'country=in&'+ 
 'pageSize=15&' +
  'page=1&'+
- 'apiKey=448bb457b22b421b9064cdf0689e842c';
+ 'apiKey=80732b8fea5a4855a6728ee0eee12001';
  
 
 let  getData=async ()=>{
     try {
-         let res =await fetch(`https://newsapi.org/v2/everything?q=india&sortBy=relevancy&apiKey=448bb457b22b421b9064cdf0689e842c`)
+         let res =await fetch(`https://newsapi.org/v2/everything?q=india&sortBy=relevancy&apiKey=80732b8fea5a4855a6728ee0eee12001`)
     let data =await res.json()
     let new_data=data.articles
     console.log(new_data)
@@ -90,7 +90,7 @@ let appenddatamustread=(data)=>{
 
 const getswapData=async ()=>{
    try {
-    let res =await fetch(`https://newsapi.org/v2/everything?q=india&sortBy=publishedAt&apiKey=448bb457b22b421b9064cdf0689e842c`)
+    let res =await fetch(`https://newsapi.org/v2/everything?q=india&sortBy=publishedAt&apiKey=80732b8fea5a4855a6728ee0eee12001`)
     let data =await res.json()
     let new_data=data.articles
     getDataswap(new_data)
@@ -180,7 +180,7 @@ const getDataswap=(data)=>{
 //everything?q=apple&from=2022-08-22&to=2022-08-24&sortBy=popularity&apiKey=API_KEY
 let  getData_news=async (page_number)=>{
    try {
-    let urm = `https://newsapi.org/v2/everything?q=india&sortBy=publishedAt&apiKey=448bb457b22b421b9064cdf0689e842c&pageSize=20&page=${page_number}`;
+    let urm = `https://newsapi.org/v2/everything?q=india&sortBy=publishedAt&apiKey=80732b8fea5a4855a6728ee0eee12001&pageSize=20&page=${page_number}`;
     let res =await fetch(urm)
     let data =await res.json()
     let new_data=data.articles
