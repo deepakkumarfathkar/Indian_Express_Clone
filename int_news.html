@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles_d/int_news.css">
+    <link rel="shortcut icon" href="assets/tab.png" />
+    <link rel="stylesheet" href="./styles_d/style.css">
+    <link rel="stylesheet" href="./styles_d/navpop.css">
+    <link rel="stylesheet" href="./style_s/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="top_header_s"></div>
+    <div id="nav_d">
+        <!-- import nav_bar  -->
+    </div>
+    <p class="page_pos_d">
+    <div id="page_nav_d">
+        <span>HOME</span>/ International News </p>
+    </div>
+
+    <div id="main_container_d">
+
+        <div id="main_container_d_1">
+
+
+            <h4>INTERNATIONAL NEWS</h4>
+
+
+            <div id="int_container">
+                <div id="intr_news">
+                    <!-- slides  -->
+                </div>
+                <div id="top_news_d">
+                    <!-- top news slides -->
+                </div>
+            </div>
+            <hr type="solid" color="black">
+            <div id="top_news_d_1">
+                <!-- top 3 news  -->
+            </div>
+
+            <hr type="solid" color="black">
+
+            <div id="international_news">
+
+                <!-- all international news and  -->
+            </div>
+            <div id="pagination_dk">
+                <!-- pagination -->
+            </div>
+        </div>
+
+
+        <div id="main_container_dk">
+            <div id="main_container_dk_1">
+                <h4 id="main_container_dk_heding">BEST OF EXPRESS </h4>
+                <hr>
+
+                <!-- BEST OF EXPRESS  -->
+
+
+            </div>
+            <div>
+
+                <div id="recomodation_d">
+                    <h4>Recomondation</h4>
+                    <hr>
+
+                    <!-- Recomondation news -->
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
+<script type="module">
+    import nav from './components_d/navbar.js'
+    let navbar = document.getElementById('nav_d')
+    navbar.innerHTML = nav();
+
+    let subscribe = document.getElementById('subscribe')
+    subscribe.addEventListener("click", function () {
+        sub()
+    })
+    function sub() {
+        if (subscribe.innerText === 'SUBSCRIBE') {
+            subscribe.innerText = "SUBSCRIBED";
+            subscribe.style.backgroundColor = "blue";
+            subscribe.style.marginLeft = "20px"
+            subscribe.style.borderRadius = "5px"
+            subscribe.style.border = "none"
+            alert("You have Subscrbed To Get latest News")
+        }
+        else {
+            subscribe.innerText = "SUBSCRIBE"
+            subscribe.style.backgroundColor = "#2080e2";
+            subscribe.style.marginLeft = "20px"
+            subscribe.style.border = "none"
+            subscribe.style.borderRadius = "5px"
+            alert("You have UnSubscrbed")
+        }
+
+    }
+
+    var popupFull = new popup({
+        dom: document.querySelector('.popup_full'),
+    });
+    document.querySelector('.hamburger').addEventListener('click', function () {
+        popupFull.show();
+    });
+
+    // top nav
+    import top_header from "./components_s/topheader.js"
+    console.log(top_header);
+    let top_header_s = document.getElementById("top_header_s");
+    top_header_s.innerHTML = top_header();
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    let d = new Date();
+    let day = days[d.getDay()];
+    let month = months[d.getMonth()];
+    let year = d.getFullYear();
+    const date = d.getDate();
+    d.getTime();
+    console.log(month, day, date, year);
+    let time = document.getElementById("time_s");
+    time.innerHTML = `${day}, ${month} ${date} ${year}`
+
+
+</script>
+<script src="./scripts_d/index.js"></script>
+<script src="./scripts_d/int_news.js"></script>

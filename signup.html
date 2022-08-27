@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="signIn&Up.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div id="nav_sign_ns" >
+      
+    </div>
+
+    <div id="sign_ns">
+        <div>
+            <div id="sign_heads_ns">
+                 <h2>Create your account</h2>
+                  <p>It is quick and easy.</p>
+            </div>
+
+            <div class="sign_div_ns">
+                <img src="https://indianexpress.com/wp-content/themes/indianexpress/images/evolok/gmail.svg" alt="">
+                Continue with Google</div>
+            <div class="sign_div_ns">
+                <img src="https://indianexpress.com/wp-content/themes/indianexpress/images/evolok/facebook.svg" alt="">
+                Continue with Facebook</div>
+            <div class="sign_div_ns">
+                <img src="	https://indianexpress.com/wp-content/themes/indianexpress/images/evolok/apple.svg" alt="">
+                Continue with Apple</div>
+            <hr>
+
+            <div class="sign_input_div">
+                <img id="at_ns" src="https://indianexpress.com/wp-content/themes/indianexpress/images/evolok/email.svg" alt="">
+                <input type="email" name="" id="sign_email_ns" placeholder=" Email Address"  required>
+            </div>
+            
+            <div class="sign_input_div">
+                <img src="https://indianexpress.com/wp-content/themes/indianexpress/images/evolok/locked.svg" alt="">
+                <input type="email" name="" id="sign_password_ns" placeholder=" Password"  required >
+            </div>
+            
+            <div class="sign_input_div">
+                <img src="https://indianexpress.com/wp-content/themes/indianexpress/images/evolok/locked.svg" alt="">
+                <input type="password" name="" id="sign_Cpassword_ns" placeholder="Confirm Password" required >
+             </div>
+
+            <div class="sign_check_ns">
+                <input type="checkbox" name="" class="chec1_ns"  required>
+                <label for="">Yes, I'd like to receive The Indian Express daily newsletter.</label>
+            </div>
+
+            <div class="sign_check_ns">
+                <input type="checkbox" name="" class="chec1_ns" required>
+                <label for="">Accept <a href="https://indianexpress.com/terms-and-conditions">Terms and Conditions</a> and our <a href="https://indianexpress.com/terms-and-conditions/">privacy policy</a> </label>
+            </div>
+            
+            <button  id="sign_regbtn_ns"   onclick="signup_data()"  >Register</button>
+
+            <div id="sign_bott_ns">Already have an account? 
+                <a href="login.html">Sign in</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+<script  type="module" >
+
+    import navbar from "./components/nav.js"
+    // console.log(navbar);
+    let navdiv = document.getElementById("nav_sign_ns")
+    navdiv.innerHTML = navbar()
+    </script>
+
+<script src="./scripts/signup.js"></script>
