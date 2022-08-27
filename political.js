@@ -102,7 +102,7 @@ let appenddatamustread=(data)=>{
 
 const getswapData=async ()=>{
    try {
-    let res =await fetch(`https://newsapi.org/v2/everything?q=indian political news&sortBy=publishedAt&apiKey=448bb457b22b421b9064cdf0689e842c`)
+    let res =await fetch(`https://newsapi.org/v2/everything?q=indian political&sortBy=publishedAt&apiKey=448bb457b22b421b9064cdf0689e842c`)
     let data =await res.json()
     let new_data=data.articles
      getDataswap(new_data)

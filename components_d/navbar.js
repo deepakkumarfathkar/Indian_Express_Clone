@@ -4,7 +4,8 @@ function nav(){
     <div class="nav_left">
         <p onclick="location.href='index.html'">Home</p>
         <p onclick="location.href='political.html'">Political Plus</p>
-        <p onclick="location.href='int_news.html.html'">International News</p>
+        <p onclick="location.href='int_news.html'">International News</p>
+        <p onclick="location.href='india.html'">India News</p>
         <p onclick="location.href='login.html'">Sign in</p>
         <button id="subscribe">SUBSCRIBE</button>
     </div>
