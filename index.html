@@ -18,12 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
-<style>
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}</style>
+
 
 
 <body style= "width: 100%; margin: auto;">
@@ -321,21 +316,21 @@ var popupFull = new popup({
   });
 
 
-window.onscroll = function() {myFunction()};
+// window.onscroll = function() {myFunction()};
 
-var navbars = document.getElementById("navbars");
-var sticky = navbars.offsetTop;
+// var navbars = document.getElementById("navbars");
+// var sticky = navbars.offsetTop;
 
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbars.classList.add("sticky")
-    console.log("wow")
-  } 
-  else {
-    console.log("wow")
-    navbars.classList.remove("sticky");
-  }
-}
+// function myFunction() {
+//   if (window.pageYOffset >= sticky) {
+//     navbars.classList.add("sticky")
+//     console.log("wow")
+//   } 
+//   else {
+//     console.log("wow")
+//     navbars.classList.remove("sticky");
+//   }
+// }
 
 </script>
 <script src="./scripts_d/index.js"></script>
