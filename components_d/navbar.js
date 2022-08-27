@@ -40,10 +40,10 @@ function nav(){
       <div class="popup_content">
         <!-- <img src="" alt=""> -->
         <ul class="topicsbox_d">
-          <li><a href="/" >Home</a>
+          <li><a href="index.html" >Home</a>
             <ul>
-              <li class="alone"><a href="#" ><strong>World</strong></a></li>
-              <li class="alone"><a href="#" ><strong>India</strong></a></li>
+              <li class="alone"><a href="int_news.html" ><strong>World</strong></a></li>
+              <li class="alone"><a href="india.html" ><strong>India</strong></a></li>
               <li class="alone"><a href="#" ><strong>North East India</strong></a></li>
               <li><a href="#" >Arunachal Pradesh</a></li>
               <li><a href="#" >Assam</a></li>
@@ -127,7 +127,7 @@ function nav(){
               <li><a href="#" >GenderAnd</a></li>
             </ul>
           </li>
-          <li><a href="#" >Sports</a>
+          <li><a href="sports.html" >Sports</a>
             <ul>
               <li><a href="#" >Olympics</a></li>
               <li><a href="#" >T20 WC</a></li>
