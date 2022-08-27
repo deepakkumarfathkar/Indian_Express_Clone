@@ -2,8 +2,8 @@
 // 0fb67e5dfd424b97bb4079f6c8238072
 // 503c800328a1466980f20a01d5373e81
 
-// let key = "0fb67e5dfd424b97bb4079f6c8238072";
-let key = "503c800328a1466980f20a01d5373e81";
+let key = "0fb67e5dfd424b97bb4079f6c8238072";
+// let key = "503c800328a1466980f20a01d5373e81";
 
 //  au ru ua jp
 
@@ -220,3 +220,13 @@ const pageButton = (result, per_page) => {
 };
 
 pageButton(100, 20);
+
+let newsqury = JSON.parse(localStorage.getItem("newsobj"));
+function serchfunction() {
+  let obj = {
+    query: document.getElementById("search").value,
+  };
+
+  localStorage.setItem("newsobj", JSON.stringify(obj));
+  window.location.href = "search.html";
+}
